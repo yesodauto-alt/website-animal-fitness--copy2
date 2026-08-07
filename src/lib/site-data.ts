@@ -1,10 +1,11 @@
 export const navItems = [
   { label: 'A Animal', href: '#diferenciais' },
   { label: 'Modalidades', href: '#modalidades' },
+  { label: 'Aulas', href: '#aulas' },
   { label: 'Coaches', href: '#coaches' },
-  { label: 'Unidades', href: '#unidades' },
   { label: 'Planos', href: '#planos' },
-  { label: 'Comunidade', href: '#comunidade' },
+  { label: 'Unidades', href: '#unidades' },
+  { label: 'Contato', href: '#contato' },
 ] as const
 
 import { WHATSAPP_URL, INSTAGRAM_URL, GOOGLE_MAPS_URL } from '@/config'

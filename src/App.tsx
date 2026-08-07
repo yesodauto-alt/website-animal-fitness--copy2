@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Toaster } from '@/components/ui/toaster'
 import { Toaster as Sonner } from '@/components/ui/sonner'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import { AuthProvider } from '@/hooks/use-auth'
 import { ConversionFlowProvider } from '@/contexts/conversion-flow'
 import Index from './pages/Index'
 import NotFound from './pages/NotFound'
@@ -19,25 +20,26 @@ import Layout from './components/Layout'
 
 const App = () => (
   <BrowserRouter>
-    <TooltipProvider>
-      <ConversionFlowProvider>
-        <Toaster />
-        <Sonner />
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Index />} />
-            <Route path="/musculacao" element={<MusculacaoPage />} />
-            <Route path="/cross" element={<CrossPage />} />
-            <Route path="/coaches" element={<CoachesPage />} />
-            <Route path="/planos" element={<PlanosPage />} />
-            <Route path="/sobre" element={<SobrePage />} />
-            <Route path="/unidades/:slug" element={<UnitPage />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </ConversionFlowProvider>
-    </TooltipProvider>
+    <AuthProvider>
+      <TooltipProvider>
+        <ConversionFlowProvider>
+          <Toaster />
+          <Sonner />
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Index />} />
+              <Route path="/musculacao" element={<MusculacaoPage />} />
+              <Route path="/cross" element={<CrossPage />} />
+              <Route path="/coaches" element={<CoachesPage />} />
+              <Route path="/planos" element={<PlanosPage />} />
+              <Route path="/sobre" element={<SobrePage />} />
+              <Route path="/unidades/:slug" element={<UnitPage />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ConversionFlowProvider>
+      </TooltipProvider>
+    </AuthProvider>
   </BrowserRouter>
 )
-
 export default App

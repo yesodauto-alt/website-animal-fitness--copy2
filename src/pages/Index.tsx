@@ -4,10 +4,12 @@ import { HeroSection } from '@/components/site/HeroSection'
 import { DifferentialsSection } from '@/components/site/DifferentialsSection'
 import { ExperienceSection } from '@/components/site/ExperienceSection'
 import { ModalitiesSection } from '@/components/site/ModalitiesSection'
+import { ClassesSection } from '@/components/site/ClassesSection'
 import { CoachesSection } from '@/components/site/CoachesSection'
 import { TestimonialsSection } from '@/components/site/TestimonialsSection'
 import { PlansSection } from '@/components/site/PlansSection'
 import { UnitsSection } from '@/components/site/UnitsSection'
+import { LeadCaptureSection } from '@/components/site/LeadCaptureSection'
 import { SocialSection } from '@/components/site/SocialSection'
 import { FaqSection } from '@/components/site/FaqSection'
 import { FinalCtaSection } from '@/components/site/FinalCtaSection'
@@ -28,11 +30,13 @@ const Index = () => {
       <KineticBand />
       <ExperienceSection />
       <ModalitiesSection />
+      <ClassesSection />
       <CoachesSection />
       <TestimonialsSection />
       <SectionDivider variant="light" />
       <PlansSection />
       <UnitsSection />
+      <LeadCaptureSection />
       <SocialSection />
       <SectionDivider variant="light" />
       <FaqSection />
