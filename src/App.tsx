@@ -3,8 +3,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Toaster } from '@/components/ui/toaster'
 import { Toaster as Sonner } from '@/components/ui/sonner'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import { ConversionFlowProvider } from '@/contexts/conversion-flow'
 import Index from './pages/Index'
 import NotFound from './pages/NotFound'
+import MusculacaoPage from './pages/MusculacaoPage'
+import CrossPage from './pages/CrossPage'
+import CoachesPage from './pages/CoachesPage'
+import PlanosPage from './pages/PlanosPage'
+import SobrePage from './pages/SobrePage'
+import UnitPage from './pages/UnitPage'
 import Layout from './components/Layout'
 
 // ONLY IMPORT AND RENDER WORKING PAGES, NEVER ADD PLACEHOLDER COMPONENTS OR PAGES IN THIS FILE
@@ -13,15 +20,22 @@ import Layout from './components/Layout'
 const App = () => (
   <BrowserRouter>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES MUST BE ADDED HERE */}
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <ConversionFlowProvider>
+        <Toaster />
+        <Sonner />
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Index />} />
+            <Route path="/musculacao" element={<MusculacaoPage />} />
+            <Route path="/cross" element={<CrossPage />} />
+            <Route path="/coaches" element={<CoachesPage />} />
+            <Route path="/planos" element={<PlanosPage />} />
+            <Route path="/sobre" element={<SobrePage />} />
+            <Route path="/unidades/:slug" element={<UnitPage />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </ConversionFlowProvider>
     </TooltipProvider>
   </BrowserRouter>
 )
